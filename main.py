@@ -23,29 +23,29 @@ def get_models():
     model2.add(Dense(7, activation='softmax'))
 
     # basic with extra  dense layer
-    model2 = Sequential()
-    model2.add(Dense(16, activation='relu', input_shape=(16, )))
-    model2.add(Dense(32, activation='relu'))
-    model2.add(Dense(7, activation='softmax'))
-
-    # basic + dropout + extra dense layer
     model3 = Sequential()
     model3.add(Dense(16, activation='relu', input_shape=(16, )))
-    model3.add(Dropout(0.25))
     model3.add(Dense(32, activation='relu'))
-    model3.add(Dropout(0.25))
     model3.add(Dense(7, activation='softmax'))
 
-     # basic + dropouts + 2 extra dense layers
+    # basic + dropout + extra dense layer
     model4 = Sequential()
     model4.add(Dense(16, activation='relu', input_shape=(16, )))
-    model4.add(Dense(32, activation='relu'))
     model4.add(Dropout(0.25))
     model4.add(Dense(32, activation='relu'))
     model4.add(Dropout(0.25))
     model4.add(Dense(7, activation='softmax'))
 
-    return [model1, model2, model3, model4]
+     # basic + dropouts + 2 extra dense layers
+    model5 = Sequential()
+    model5.add(Dense(16, activation='relu', input_shape=(16, )))
+    model5.add(Dense(32, activation='relu'))
+    model5.add(Dropout(0.25))
+    model5.add(Dense(32, activation='relu'))
+    model5.add(Dropout(0.25))
+    model5.add(Dense(7, activation='softmax'))
+
+    return [model1, model2, model3, model4, model5]
 
 def build_model():
     model = Sequential()
